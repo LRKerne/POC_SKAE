@@ -28,7 +28,7 @@ export const LoginForm = styled.form`
     font-size: 16px;
     background: #b3ecff;
     height: 25px;
-    border: 1;
+    border: 1px;
     border-radius: 5px;
     width: 50%;
   }
