@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginForm = styled.form`
+export const LoginForm = styled.div`
   width: 250px;
   height: 400px;
   background: lightcyan;
