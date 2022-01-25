@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { fetchQuestions } from "../../services/apiQuiz";
 
 //Styles
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import  {QuizStyle} from "./Quiz.styles"
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -17,50 +17,16 @@ import QuestionCard from "./QuestionCard";
 import { QuestionState, Difficulty } from "../../services/apiQuiz";
 
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    info: {
-      textAlign: "center",
-      margin: `${theme.spacing(0)} auto`,
-      background: "#6b9798",
-    },
-    start: {
-      marginTop: theme.spacing(2),
-      flexGrow: 1,
-    },
-    previous: {
-      marginTop: theme.spacing(2),
-      flexGrow: 1,
-    },
-    next: {
-      marginTop: theme.spacing(2),
-      flexGrow: 1,
-    },
-    header: {
-      textAlign: "center",
-      background: "#212121",
-      color: "#fff",
-    },
-    card: {
-      marginTop: theme.spacing(10),
-    },
-  })
-);
-
 //state type
 
 type AnswerObject = {
   question: string;
-  answer: string;
-  correct: boolean;
-  correctAnswer: string;
+  answer: number;
 };
 
 const TOTAL_QUESTIONS = 10;
 
 const Quiz = () => {
-  const classes = useStyles();
-
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
   const [number, setNumber] = useState(0);
@@ -69,7 +35,7 @@ const Quiz = () => {
   const [gameOver, setGameOver] = useState(true);
 
   // console.log(questions);
-  console.log(userAnswers);
+  console.log(questions);
 
   const startQuestionaire = async () => {
     setLoading(true);
@@ -87,19 +53,20 @@ const Quiz = () => {
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
       //Users answer
-      const answer = e.currentTarget.value;
+      const answer = parseInt(e.currentTarget.value);
 
       // Check answer agains correct answer
-      const correct = questions[number].correct_answer === answer;
+      // const correct = questions[number].correct_answer === answer;
 
       //Add Score if answer is correct
-      if (correct) setScore((prev) => prev + 1);
+      setScore((prev) => prev + answer + 1);
+      console.log(e.currentTarget.value)
 
       // Save answer in the array  for user answers
       const answerObject = {
         question: questions[number].question,
         answer,
-        correct,
+        // correct,
         correctAnswer: questions[number].correct_answer,
       };
       setUserAnswers((prev) => [...prev, answerObject]);
@@ -125,9 +92,9 @@ const Quiz = () => {
   };
 
   return (
-    <div className="App">
-      <Card className={classes.card}>
-        <CardHeader className={classes.header} title="Quiz" />
+    <QuizStyle className="App">
+      <Card className={"card"}>
+        <CardHeader className={"header"} title="Quiz" />
         <CardActions>
           {/* Start Button */}
           {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
@@ -135,14 +102,14 @@ const Quiz = () => {
               variant="contained"
               size="large"
               color="secondary"
-              className={classes.start}
+              className="start"
               onClick={startQuestionaire}
             >
               Start
             </Button>
           ) : null}
         </CardActions>
-        <CardContent className={classes.info}>
+        <CardContent className={"info"}>
           {/* Score */}
           {!gameOver ? <p className="score">Score: {score}</p> : null}
 
@@ -171,7 +138,7 @@ const Quiz = () => {
               variant="contained"
               size="small"
               color="secondary"
-              className={classes.previous}
+              className="previous"
               onClick={previousQuestion}
             >
               Previous Question
@@ -184,7 +151,7 @@ const Quiz = () => {
               variant="contained"
               size="small"
               color="secondary"
-              className={classes.next}
+              className="next"
               onClick={nextQuestion}
             >
               Next Question
@@ -193,7 +160,7 @@ const Quiz = () => {
         </CardActions>
         <p></p>
       </Card>
-    </div>
+    </QuizStyle>
   );
 };
 
