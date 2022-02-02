@@ -3,7 +3,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import { Button } from "@material-ui/core";
-import  {QuizStyle} from "./Quiz.styles"
+import  {QuizStyle, Wrapper} from "./Quiz.styles"
 
 //state type
 
@@ -27,7 +27,8 @@ const QuestionCard: React.FC<Props> =({
   
   return(
   <QuizStyle>
-    <Card>
+    <Wrapper>
+    <Card className="cardtext">
     {/* <CardHeader className={classes.header} title={`Question ${questionNr} / ${totalQuestions}`} /> */}
       <CardContent className="info">
       Question: {questionNr} / {totalQuestions}
@@ -49,7 +50,7 @@ const QuestionCard: React.FC<Props> =({
       ))}
       </ CardActions>
       </Card>
-
+    </Wrapper>
   </QuizStyle>
 
 );

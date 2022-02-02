@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  width: 100%;
+  height: 450px;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+`;
+
 export const LoginForm = styled.div`
-  width: 250px;
-  height: 400px;
+  width: 450px;
+  height: 100%;
   background: lightcyan;
-  padding: 0 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   input {
-    flex: 1;
     height: 46px;
     margin-bottom: 15px;
-    padding: 0 20px;
+    padding: 0 50px;
     color: #777;
     font-size: 15px;
     border: 1px solid blue;
@@ -32,16 +38,4 @@ export const LoginForm = styled.div`
     border-radius: 5px;
     width: 50%;
   }
-  /* hr {
-    margin: 20px 0;
-    border: none;
-    border-bottom: 1px solid #cdcdcd;
-    width: 100%;
-  } */
-  /* a {
-    font-size: 16;
-    font-weight: bold;
-    color: #999;
-    text-decoration: none;
-  } */
 `;

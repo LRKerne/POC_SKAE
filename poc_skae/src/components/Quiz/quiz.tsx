@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { fetchQuestions } from "../../services/apiQuiz";
 
 //Styles
-import  {QuizStyle} from "./Quiz.styles"
+import  {QuizStyle, Wrapper} from "./Quiz.styles"
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -93,8 +93,9 @@ const Quiz = () => {
 
   return (
     <QuizStyle className="App">
+      <Wrapper>
       <Card className={"card"}>
-        <CardHeader className={"header"} title="Quiz" />
+        <CardHeader className={"header"} title="Questionario" />
         <CardActions>
           {/* Start Button */}
           {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
@@ -141,7 +142,7 @@ const Quiz = () => {
               className="previous"
               onClick={previousQuestion}
             >
-              Previous Question
+              Pergunta Anterior
             </Button>
           ) : null}
 
@@ -154,12 +155,13 @@ const Quiz = () => {
               className="next"
               onClick={nextQuestion}
             >
-              Next Question
+              Proxima Pergunta
             </Button>
           ) : null}
         </CardActions>
         <p></p>
       </Card>
+      </Wrapper>  
     </QuizStyle>
   );
 };

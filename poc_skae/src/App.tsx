@@ -4,9 +4,7 @@ import { Container } from "./styles/global";
 import Rout from "./routes";
 //TYPES
 const App = () => {
-  
-
-  return (
+    return (
     <Container className="App">
       <Rout />
     </Container>

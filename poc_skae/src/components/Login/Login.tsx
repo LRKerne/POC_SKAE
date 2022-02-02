@@ -2,7 +2,7 @@ import { Button } from "@material-ui/core";
 import { LoginField } from "./LoginField";
 import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
-import { LoginForm} from "./Login.styles";
+import { LoginForm, Wrapper } from "./Login.styles";
 import * as Yup from "yup";
 
 interface Values {
@@ -20,24 +20,25 @@ const Login: React.FC<Props> = () => {
   //   navigate("/quiz");
   // }
   return (
+    <Wrapper>
     <LoginForm>
       <h1>Login</h1>
-      
+
       <Formik
         initialValues={{ username: "", password: "" }}
         validationSchema={Yup.object().shape({
-          username: Yup.string()
-            .required("Required"),
+          username: Yup.string().required("Required"),
 
-            password: Yup.string()
-            .required("Required")
+          password: Yup.string().required("Required"),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
-            if (
-              values.password && values.username === "admin"
-            ){navigate("/quiz");}
+            if (values.password && values.username === "admin") {
+              navigate("/Admin");
+            } else {
+                navigate("/Quiz");
+            }
 
             setSubmitting(false);
           }, 400);
@@ -81,11 +82,12 @@ const Login: React.FC<Props> = () => {
             </Button>
             <Button type="submit" disabled={isSubmitting}>
               Submit
-              </Button>
+            </Button>
           </Form>
         )}
       </Formik>
     </LoginForm>
+    </Wrapper>
   );
 };
 
