@@ -1,0 +1,197 @@
+{
+
+  "logins": [
+    {
+      "username": "asht",
+      "password": "asht"
+    }
+  ],
+  
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Robert",
+      "last_name": "Schwartz",
+      "email": "rob23@gmail.com",
+      "isAdmin": false
+    },
+    {
+      "id": 2,
+      "first_name": "Lucy",
+      "last_name": "Ballmer",
+      "email": "lucyb56@gmail.com",
+      "isAdmin": false
+    },
+    {
+      "id": 3,
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "email": "annasmith23@gmail.com",
+      "isAdmin": false
+    },
+    {
+      "id": 4,
+      "first_name": "Robert",
+      "last_name": "Brown",
+      "email": "bobbrown432@yahoo.com",
+      "isAdmin": true
+    },
+    {
+      "id": 5,
+      "first_name": "Roger",
+      "last_name": "Bacon",
+      "email": "rogerbacon12@yahoo.com",
+      "isAdmin": true
+    }
+  ],
+  "question": [
+    {
+      "id": "900810c5-093a-44b1-850d-3e78685a687f",
+      "name": "Question 1",
+      "description": null,
+      "createdAt": "2022-03-29T21:40:11.886Z",
+      "updatedAt": "2022-03-29T21:40:11.886Z",
+      "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "category": {
+        "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+        "name": "Category 1",
+        "description": null,
+        "createdAt": "2022-03-29T21:39:51.596Z",
+        "updatedAt": "2022-03-29T21:39:51.596Z",
+        "rate": 0
+      }
+    },
+    {
+      "id": "30fedcb8-2beb-427e-ae05-c1a71a5ddbbc",
+      "name": "Question 2",
+      "description": null,
+      "createdAt": "2022-03-29T21:41:15.059Z",
+      "updatedAt": "2022-03-29T21:41:15.059Z",
+      "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "category": {
+        "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+        "name": "Category 1",
+        "description": null,
+        "createdAt": "2022-03-29T21:39:51.596Z",
+        "updatedAt": "2022-03-29T21:39:51.596Z",
+        "rate": 0
+      }
+    },
+    {
+      "id": "0aa88e9e-591f-4f88-a2d1-f6ad7b2b061b",
+      "name": "Question 3",
+      "description": null,
+      "createdAt": "2022-03-29T21:41:15.059Z",
+      "updatedAt": "2022-03-29T21:41:15.059Z",
+      "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "category": {
+        "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+        "name": "Category 1",
+        "description": null,
+        "createdAt": "2022-03-29T21:39:51.596Z",
+        "updatedAt": "2022-03-29T21:39:51.596Z",
+        "rate": 0
+      }
+    },
+    {
+      "id": "1acfcc7c-ebdb-41d6-8da4-5b8a636bd81c",
+      "name": "Question 4",
+      "description": null,
+      "createdAt": "2022-03-29T21:41:15.060Z",
+      "updatedAt": "2022-03-29T21:41:15.060Z",
+      "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "category": {
+        "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+        "name": "Category 1",
+        "description": null,
+        "createdAt": "2022-03-29T21:39:51.596Z",
+        "updatedAt": "2022-03-29T21:39:51.596Z",
+        "rate": 0
+      }
+    },
+    {
+      "id": "92d75533-6f32-446f-a786-a7d9a29690b7",
+      "name": "Question 5",
+      "description": null,
+      "createdAt": "2022-03-29T21:41:15.060Z",
+      "updatedAt": "2022-03-29T21:41:15.060Z",
+      "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "category": {
+        "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+        "name": "Category 1",
+        "description": null,
+        "createdAt": "2022-03-29T21:39:51.596Z",
+        "updatedAt": "2022-03-29T21:39:51.596Z",
+        "rate": 0
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "name": "Category 1",
+      "description": null,
+      "createdAt": "2022-03-29T21:39:51.596Z",
+      "updatedAt": "2022-03-29T21:39:51.596Z",
+      "rate": 5,
+      "questions": [
+        {
+          "id": "900810c5-093a-44b1-850d-3e78685a687f",
+          "name": "Question 1",
+          "description": null,
+          "createdAt": "2022-03-29T21:40:11.886Z",
+          "updatedAt": "2022-03-29T21:40:11.886Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "30fedcb8-2beb-427e-ae05-c1a71a5ddbbc",
+          "name": "Question 2",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.059Z",
+          "updatedAt": "2022-03-29T21:41:15.059Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "0aa88e9e-591f-4f88-a2d1-f6ad7b2b061b",
+          "name": "Question 3",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.059Z",
+          "updatedAt": "2022-03-29T21:41:15.059Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "1acfcc7c-ebdb-41d6-8da4-5b8a636bd81c",
+          "name": "Question 4",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.060Z",
+          "updatedAt": "2022-03-29T21:41:15.060Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "92d75533-6f32-446f-a786-a7d9a29690b7",
+          "name": "Question 5",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.060Z",
+          "updatedAt": "2022-03-29T21:41:15.060Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        }
+      ]
+    }
+  ],
+  "survey-results": [
+    {
+      "id": "65bd571a-0915-4db9-8675-d539c1524251",
+      "name": null,
+      "description": null,
+      "expiredAt": "2022-03-29T21:58:57.496Z",
+      "isCompleted": false,
+      "userId": "e8866a97-ef4a-4a92-9afd-c775ca38e63e",
+      "user": {
+        "id": "e8866a97-ef4a-4a92-9afd-c775ca38e63e",
+        "email": "marcelowisc@gmail.com",
+        "fistName": null,
+        "lastName": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+Login:
+    - Post
+    - Url: http://localhost:3000/auth/signup
+    - Form data: email, password
+
+survey:
+    - Envio das respostas
+    - survey/:id
+    -  
+{
+	"userId": "e8866a97-ef4a-4a92-9afd-c775ca38e63e",
+	"answers": [
+		{
+			"categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+			"rate": 25
+		}
+	]
+}

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import { LoginForm, Wrapper } from "./Login.styles";
 import * as Yup from "yup";
+import axios from 'axios';
 
 interface Values {
   password: string;
@@ -16,6 +17,7 @@ interface Props {
 
 const Login: React.FC<Props> = () => {
   let navigate = useNavigate();
+  const basepath = 'http://localhost:3004/'; 
   // function handleClick() {
   //   navigate("/quiz");
   // }
@@ -33,7 +35,8 @@ const Login: React.FC<Props> = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            axios.post(basepath+'logins',JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values, null,2));
             if (values.password && values.username === "admin") {
               navigate("/Admin");
             } else {
