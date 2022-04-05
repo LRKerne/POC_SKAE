@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { fetchQuestions } from "../../services/apiQuiz";
-
+import api from "../../api";
 //Styles
-import  {QuizStyle, Wrapper} from "./Quiz.styles"
+import { QuizStyle, Wrapper } from "./Quiz.styles";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -16,7 +16,6 @@ import QuestionCard from "./QuestionCard";
 //TYPES
 import { QuestionState, Difficulty } from "../../services/apiQuiz";
 
-
 //state type
 
 type AnswerObject = {
@@ -28,7 +27,8 @@ const TOTAL_QUESTIONS = 10;
 
 const Quiz = () => {
   const [loading, setLoading] = useState(false);
-  const [questions, setQuestions] = useState<QuestionState[]>([]);
+  // const [questions, setQuestions] = useState<QuestionState[]>([]);
+  const [questions, setQuestions] = useState<any[]>([]);
   const [number, setNumber] = useState(0);
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
@@ -60,7 +60,7 @@ const Quiz = () => {
 
       //Add Score if answer is correct
       setScore((prev) => prev + answer + 1);
-      console.log(e.currentTarget.value)
+      console.log(e.currentTarget.value);
 
       // Save answer in the array  for user answers
       const answerObject = {
@@ -94,74 +94,74 @@ const Quiz = () => {
   return (
     <QuizStyle className="App">
       <Wrapper>
-      <Card className={"card"}>
-        <CardHeader className={"header"} title="Questionario" />
-        <CardActions>
-          {/* Start Button */}
-          {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-            <Button
-              variant="contained"
-              size="large"
-              color="secondary"
-              className="start"
-              onClick={startQuestionaire}
-            >
-              Start
-            </Button>
-          ) : null}
-        </CardActions>
-        <CardContent className={"info"}>
-          {/* Score */}
-          {!gameOver ? <p className="score">Score: {score}</p> : null}
+        <Card className={"card"}>
+          <CardHeader className={"header"} title="Questionario" />
+          <CardActions>
+            {/* Start Button */}
+            {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+              <Button
+                variant="contained"
+                size="large"
+                color="secondary"
+                className="start"
+                onClick={startQuestionaire}
+              >
+                Start
+              </Button>
+            ) : null}
+          </CardActions>
+          <CardContent className={"info"}>
+            {/* Score */}
+            {!gameOver ? <p className="score">Score: {score}</p> : null}
 
-          {/* Loading Questions */}
-          {loading && <p>Loading Questions...</p>}
+            {/* Loading Questions */}
+            {loading && <p>Loading Questions...</p>}
 
-          {/* Question Card */}
-          {!loading && !gameOver && (
-            <QuestionCard
-              questionNr={number + 1}
-              totalQuestions={TOTAL_QUESTIONS}
-              question={questions[number].question}
-              answers={questions[number].answers}
-              userAnswer={userAnswers ? userAnswers[number] : undefined}
-              callback={checkAnswer}
-            />
-          )}
-        </CardContent>
-        <CardActions>
-          {/* Previous Question Button */}
-          {!loading &&
-          !gameOver &&
-          number >= 1 &&
-          number !== TOTAL_QUESTIONS - 1 ? (
-            <Button
-              variant="contained"
-              size="small"
-              color="secondary"
-              className="previous"
-              onClick={previousQuestion}
-            >
-              Pergunta Anterior
-            </Button>
-          ) : null}
+            {/* Question Card */}
+            {!loading && !gameOver && (
+              <QuestionCard
+                questionNr={number + 1}
+                totalQuestions={TOTAL_QUESTIONS}
+                question={questions[number].question}
+                answers={questions[number].answers}
+                userAnswer={userAnswers ? userAnswers[number] : undefined}
+                callback={checkAnswer}
+              />
+            )}
+          </CardContent>
+          <CardActions>
+            {/* Previous Question Button */}
+            {!loading &&
+            !gameOver &&
+            number >= 1 &&
+            number !== TOTAL_QUESTIONS - 1 ? (
+              <Button
+                variant="contained"
+                size="small"
+                color="secondary"
+                className="previous"
+                onClick={previousQuestion}
+              >
+                Pergunta Anterior
+              </Button>
+            ) : null}
 
-          {/* Next Question Button */}
-          {!loading && !gameOver && number !== TOTAL_QUESTIONS - 1 ? (
-            <Button
-              variant="contained"
-              size="small"
-              color="secondary"
-              className="next"
-              onClick={nextQuestion}
-            >
-              Proxima Pergunta
-            </Button>
-          ) : null}
-        </CardActions>
-        <p></p>
-      </Card>
-      </Wrapper>  
+            {/* Next Question Button */}
+            {!loading && !gameOver && number !== TOTAL_QUESTIONS - 1 ? (
+              <Button
+                variant="contained"
+                size="small"
+                color="secondary"
+                className="next"
+                onClick={nextQuestion}
+              >
+                Proxima Pergunta
+              </Button>
+            ) : null}
+          </CardActions>
+          <p></p>
+        </Card>
+      </Wrapper>
     </QuizStyle>
   );
 };

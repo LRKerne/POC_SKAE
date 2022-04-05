@@ -176,6 +176,56 @@
           "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
         }
       ]
+    },
+    {
+      "id": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed",
+      "name": "Category 2",
+      "description": null,
+      "createdAt": "2022-03-29T21:39:51.596Z",
+      "updatedAt": "2022-03-29T21:39:51.596Z",
+      "rate": 5,
+      "questions": [
+        {
+          "id": "900810c5-093a-44b1-850d-3e78685a687f",
+          "name": "Question 1",
+          "description": null,
+          "createdAt": "2022-03-29T21:40:11.886Z",
+          "updatedAt": "2022-03-29T21:40:11.886Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "30fedcb8-2beb-427e-ae05-c1a71a5ddbbc",
+          "name": "Question 2",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.059Z",
+          "updatedAt": "2022-03-29T21:41:15.059Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "0aa88e9e-591f-4f88-a2d1-f6ad7b2b061b",
+          "name": "Question 3",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.059Z",
+          "updatedAt": "2022-03-29T21:41:15.059Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "1acfcc7c-ebdb-41d6-8da4-5b8a636bd81c",
+          "name": "Question 4",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.060Z",
+          "updatedAt": "2022-03-29T21:41:15.060Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        },
+        {
+          "id": "92d75533-6f32-446f-a786-a7d9a29690b7",
+          "name": "Question 5",
+          "description": null,
+          "createdAt": "2022-03-29T21:41:15.060Z",
+          "updatedAt": "2022-03-29T21:41:15.060Z",
+          "categoryId": "4eeaf84b-590a-4d88-8031-4aa6fdcf26ed"
+        }
+      ]
     }
   ],
   "survey-results": [
